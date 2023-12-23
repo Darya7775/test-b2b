@@ -1,0 +1,67 @@
+.social {
+  width: 100%;
+
+  display: flex;
+  gap: 19px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-1023 {
+    gap: 5px;
+  }
+}
+
+.social__link {
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+
+  &::after {
+    content: "";
+
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background: radial-gradient($color-eclipse, #141414);
+    border-radius: 8px;
+  }
+
+  @include hover {
+    &::after {
+      background: none;
+      background-color: #363636;
+      transition: background-color 1s;
+    }
+  }
+
+  &--youtube {
+    background: url("/youtube-with-border.svg") no-repeat center;
+  }
+
+  &--telegram {
+    background: url("/telegram-with-border.svg") no-repeat center;
+  }
+
+  &--vk {
+    background: url("/vk-with-border.svg") no-repeat center;
+  }
+
+  @include vp-1023 {
+    width: 35px;
+    height: 35px;
+
+    &::after {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}

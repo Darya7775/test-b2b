@@ -1,0 +1,185 @@
+.header {
+  width: 100%;
+
+  color: $color-buff;
+}
+
+.header__container {
+  padding-top: 21px;
+  padding-bottom: 18px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.header__wrapper-left {
+  display: flex;
+  gap: 23px;
+}
+
+.header__wrapper-right {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 69px;
+
+  @include vp-1023 {
+    gap: 40px;
+  }
+
+  @include vp-767 {
+    gap: 5px;
+  }
+}
+
+.header__logo {
+  display: flex;
+  margin: 4px 0 0 1px;
+
+  @include vp-767 {
+    margin: 0;
+  }
+}
+
+.header__text {
+  display: block;
+  max-width: 204px;
+
+  font-size: 0.9em;
+  line-height: 130%;
+
+  @include vp-1366 {
+    display: none;
+  }
+}
+
+.header__wrapper-email {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__email-text {
+  font-size: 0.9em;
+  color: #767676;
+  line-height: 140%;
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.header__email {
+  font-size: 0.9em;
+  color: $color-buff;
+  line-height: 140%;
+  border-bottom: 1px dashed $color-buff;
+
+  @include hover {
+    border-bottom: 1px dashed #ebddb3;
+    color: #ebddb3;
+    transition: color 1s;
+  }
+
+  @include vp-767 {
+    width: 35px;
+    height: 35px;
+
+    border-bottom: none;
+
+    background: url("/envelope_icon.svg") no-repeat center;
+    background-size: contain;
+
+    @include hover {
+      border-bottom: none;
+    }
+  }
+}
+
+.header__email-span {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.header__wrapper-tel {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  margin-left: 8px;
+
+  @include vp-1023 {
+    margin-left: 0;
+  }
+}
+
+.header__tel {
+  font-family: $ff-oranienbaum;
+  line-height: 120%;
+  font-size: 1.25em;
+  letter-spacing: 0.05em;
+
+  @include hover {
+    color: #a19d9d;
+    transition: color 1s;
+  }
+
+  @include vp-1023 {
+    font-size: 1em;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.header__callback {
+  border: none;
+  padding: 0;
+  background-color: $color-black-pearl;
+
+  font-size: 0.9em;
+  color: $color-buff;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+  border-bottom: 1px dashed $color-buff;
+
+  cursor: pointer;
+  user-select: none;
+
+  @include hover {
+    border-bottom: 1px dashed #ebddb3;
+    color: #ebddb3;
+    transition: color, border-bottom 1s;
+  }
+
+  @include vp-767 {
+    width: 35px;
+    height: 35px;
+
+    background: url("/phone.svg") no-repeat center;
+    background-size: contain;
+    border-bottom: none;
+
+    @include hover {
+      border-bottom: none;
+    }
+  }
+}
+
+.header__callback-text {
+  display: block;
+  font-size: 1em;
+  color: $color-buff;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+
+  @include hover {
+    color: #ebddb3;
+    transition: color 1s;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}

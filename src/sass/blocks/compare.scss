@@ -1,0 +1,387 @@
+.compare {
+  margin-top: 219px;
+  width: 100%;
+
+  display: grid;
+  justify-items: center;
+  position: relative;
+
+  @include vp-767 {
+    margin-top: 50px;
+    gap: 20px;
+  }
+}
+
+.compare__container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content max-content;
+  row-gap: 41px;
+  column-gap: 113px;
+
+  @include vp-1023 {
+    column-gap: 20px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+  }
+}
+
+.compare__text {
+  font-family: $ff-oranienbaum;
+  font-size: 2.5em;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  width: 59.2%;
+  margin: 0;
+
+  grid-area: 1/1/2/-1;
+
+  @include vp-1023 {
+    width: 100%;
+    font-size: 2em;
+  }
+
+  @include vp-767 {
+    font-size: 1.5em;
+  }
+}
+
+.compare__text-span {
+  color: $color-buff;
+}
+
+.compare__wrapper {
+  display: grid;
+  align-items: start;
+  gap: 38px;
+
+  h2 {
+    margin: 0 0 0 33px;
+
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 112%;
+
+    @include vp-1023 {
+      font-size: 1.2em;
+    }
+
+    @include vp-767 {
+      font-size: 1em;
+    }
+  }
+
+  &--left {
+    border-radius: 40px;
+    grid-area: 2/1/-1/2;
+    background-color: $color-eclipse;
+
+    margin: 0 1% 0 18.2%;
+    padding: 39px 44px 40px 40px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 84px;
+      bottom: 0;
+      z-index: 1;
+
+      width: 22%;
+      height: 42%;
+      background-image:
+        image-set(
+          url("/compare/plant-simple-sofa.avif") type("image/avif"),
+          url("/compare/plant-simple-sofa.webp") type("image/webp"),
+          url("/compare/plant-simple-sofa.png"));
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      @include retina {
+        background-image:
+          image-set(
+          url("/compare/plant-simple-sofa@2x.avif") type("image/avif"),
+          url("/compare/plant-simple-sofa@2x.webp") type("image/webp"),
+          url("/compare/plant-simple-sofa@2x.png"));
+      }
+
+      @include vp-1919 {
+        left: -20px;
+      }
+
+      @include vp-1439 {
+        display: none;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 71px;
+      bottom: 0;
+      z-index: 2;
+
+      width: 45.5%;
+      height: 26%;
+
+      background-image:
+        image-set(
+          url("/compare/simple-sofa.avif") type("image/avif"),
+          url("/compare/simple-sofa.webp") type("image/webp"),
+          url("/compare/simple-sofa.png"));
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      @include retina {
+        background-image:
+          image-set(
+          url("/compare/simple-sofa@2x.avif") type("image/avif"),
+          url("/compare/simple-sofa@2x.webp") type("image/webp"),
+          url("/compare/simple-sofa@2x.png"));
+      }
+
+      // @include vp-1439 {
+      //   left: 27px;
+      //   bottom: 141px;
+      // }
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+
+    @include vp-767 {
+      grid-area: 2/1/3/-1;
+    }
+  }
+
+  &--right {
+    border-radius: 25px;
+    grid-area: 2/2/-1/-1;
+    background-color: $color-default-white;
+    color: #333333;
+
+    margin-right: 18.2%;
+    padding: 38px 40px 10px 33px;
+
+    h2 {
+      margin: 0 1% 0 36px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 199px;
+      bottom: 0;
+      z-index: 1;
+
+      width: 9%;
+      height: 47%;
+      background-image:
+        image-set(
+          url("/compare/plant-white-sofa.avif") type("image/avif"),
+          url("/compare/plant-white-sofa.webp") type("image/webp"),
+          url("/compare/plant-white-sofa.png"));
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      @include retina {
+        background-image:
+          image-set(
+          url("/compare/plant-white-sofa@2x.avif") type("image/avif"),
+          url("/compare/plant-white-sofa@2x.webp") type("image/webp"),
+          url("/compare/plant-white-sofa@2x.png"));
+      }
+
+      @include vp-1919 {
+        right: 50px;
+      }
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      right: -3px;
+      bottom: 0;
+      z-index: 2;
+
+      width: 49.5%;
+      height: 26%;
+
+      background-image:
+        image-set(
+          url("/compare/white-sofa.avif") type("image/avif"),
+          url("/compare/white-sofa.webp") type("image/webp"),
+          url("/compare/white-sofa.png"));
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      @include retina {
+        background-image:
+          image-set(
+          url("/compare/white-sofa@2x.avif") type("image/avif"),
+          url("/compare/white-sofa@2x.webp") type("image/webp"),
+          url("/compare/white-sofa@2x.png"));
+      }
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+
+    @include vp-767 {
+      grid-area: 3/1/-1/-1;
+    }
+  }
+
+  @include vp-1680 {
+    margin: 0;
+  }
+
+  @include vp-1023 {
+    padding: 20px;
+  }
+
+  @include vp-767 {
+    gap: 20px;
+
+    font-size: 0.8em;
+  }
+}
+
+.compare__list {
+  margin: 0 0 138px 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+
+  line-height: 125%;
+  letter-spacing: 0.01em;
+
+  @include vp-1023 {
+    margin: 0;
+  }
+}
+
+.compare__item {
+  padding-left: 35px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+
+    width: 24px;
+    height: 24px;
+
+    background: url("/cancel.svg") no-repeat center;
+  }
+
+  &--left {
+    &::before {
+      background: url("/cancel.svg") no-repeat center;
+    }
+  }
+
+  &--right {
+    &::before {
+      background: url("/check.svg") no-repeat center;
+    }
+  }
+}
+
+.compare__wrap-help {
+  border-radius: 200px;
+  background-color: $color-default-white;
+  color: #333333;
+
+  position: relative;
+  z-index: 3;
+
+  width: 21.5%;
+  padding: 24px 32px 24px 26px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include vp-1919 {
+    width: 30%;
+  }
+
+  @include vp-1279 {
+    width: 50%;
+  }
+
+  @include vp-1023 {
+    width: 65%;
+  }
+
+  @include vp-767 {
+    width: 90%;
+    padding: 20px;
+
+    border-radius: 20px;
+  }
+}
+
+.compare__help-social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  gap: 20px;
+}
+
+.compare__help-link {
+  display: block;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: $color-eclipse;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+
+  &--telegram {
+    background-image: url("/telegram.svg");
+  }
+
+  &--vk {
+    background-image: url("/vk.svg");
+  }
+
+  @include hover {
+    background-color: #636161;
+    transition: background-color 1s;
+  }
+}
+
+.compare__help-text {
+  width: 67%;
+}
